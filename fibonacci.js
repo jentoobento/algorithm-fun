@@ -2,10 +2,10 @@
  * fibonacci is the 2 preceeding numbers added together
  */
 
-var count = 3;
-var first = 0;
-var second = 1;
-var sum = 0;
+let count = 3;
+let first = 0;
+let second = 1;
+let sum = 0;
 
 function fibonacci(stopAt) {
     if (stopAt < 1) {
