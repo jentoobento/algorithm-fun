@@ -4,17 +4,17 @@
  * 
  */
 
-var arr = [7, 1, 5, 3, 2, 6, 1, 4, 0, 9, 7, 1, 11];
+const arr = [7, 1, 5, 3, 2, 6, 1, 4, 0, 9, 7, 1, 11];
 
-var lowest = arr[0];
-var lowestIndex = 0;
-var profit = undefined;
-var highestProfit = 0;
-var buyDay = undefined;
-var buyPrice = 0;
-var sellDay = undefined;
-var sellPrice = 0;
-var message = [];
+let lowest = arr[0];
+let lowestIndex = 0;
+let profit = undefined;
+let highestProfit = 0;
+let buyDay = undefined;
+let buyPrice = 0;
+let sellDay = undefined;
+let sellPrice = 0;
+let message = [];
 
 for (let i = 0; i < arr.length; i++) {
     if (arr[i] < lowest) {
