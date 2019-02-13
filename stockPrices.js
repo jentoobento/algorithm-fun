@@ -32,7 +32,7 @@ for (let i = 0; i < arr.length; i++) {
                 sellPrice = arr[j]
             }
         }
-        message.push('buy on day ' + buyDay + ' for $' + buyPrice + ' sell on day ' + sellDay + ' for $' + sellPrice + ' profit is $' + highestProfit);
+        message.push(`buy on day ${buyDay} for $${buyPrice} sell on day ${sellDay} for $${sellPrice} profit is $${highestProfit}`);
     }
     if (!profit) {
         message.push('dont buy, no profit can be made')
