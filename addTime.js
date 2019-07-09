@@ -1,4 +1,4 @@
-/**
+ /**
  * given an array of times in D:HH:MM:SS format, sum them and return the result.
  * the sum should follow regular time format, so any minute higher than 59, should result
  * in an additional hour and revert minute to zero. the same for seconds.
@@ -8,7 +8,7 @@
  * the sum numbers should be formatted to 2 digits except hours, which should not be formatted.
  * 
  * assume all times given are strings in the format stated above. (D:HH:MM:SS)
- * assume all times are <= 59 except days, which should be >= 0.
+ * assume all times are <= 59 and >= 0 except days, which should be >= 0.
  * assume all numbers are positive integers.
  * 
  * examples:
