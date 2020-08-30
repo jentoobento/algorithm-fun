@@ -37,7 +37,7 @@
  * The highest uninterrupted substring in the second element is B with 3 occurances.
  */
 
-function longestUninterrupttedSubstring(lines) {
+function longestUninterruptedSubstring(lines) {
   lines.forEach((line) => {
     let highestLetter = '';
     let highestAmount = 0;
@@ -61,8 +61,8 @@ function longestUninterrupttedSubstring(lines) {
   });
 }
 
-longestUninterrupttedSubstring(['ZZZAAA']);
-longestUninterrupttedSubstring(['BCCCXXYYZZZZ']);
-longestUninterrupttedSubstring(['ZZZAAAZAAAAABBC']);
-longestUninterrupttedSubstring(['AAABBBBAABBBCCCCCCCDDAAAAAAAAAADEFGCC']);
-longestUninterrupttedSubstring(['CCCB', 'EDCBA', 'ABCDEEFGHH']);
+longestUninterruptedSubstring(['ZZZAAA']);
+longestUninterruptedSubstring(['BCCCXXYYZZZZ']);
+longestUninterruptedSubstring(['ZZZAAAZAAAAABBC']);
+longestUninterruptedSubstring(['AAABBBBAABBBCCCCCCCDDAAAAAAAAAADEFGCC']);
+longestUninterruptedSubstring(['CCCB', 'EDCBA', 'ABCDEEFGHH']);
