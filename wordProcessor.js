@@ -39,10 +39,10 @@ const wordProcessor = (maxLengthOfLine, wordsArray) => {
 
   while(wordString.length > 0) {
     if (wordString.length <= maxLengthOfLine) {
-    trim = wordString;
-  } else {
-    trim = wordString.substr(0, wordString.lastIndexOf(' ', maxLengthOfLine));
-  }
+      trim = wordString;
+    } else {
+      trim = wordString.substr(0, wordString.lastIndexOf(' ', maxLengthOfLine));
+    }
     output += trim + '\n';
     wordString = wordString.replace(trim, '').trim();
   }
