@@ -33,23 +33,28 @@ const simpleStringFunction = (url: string) => {
   return output
 }
 
-const simpleFetchFunction = async (url: string) => {
+const simpleFetchFunction = async <T>(url: string): Promise<T> => {
   console.log('Simple Fetch Function ran', url)
 
   const response = await fetch(url);
   return await response.json()
 }
 
-const memoizedFactoryFunction = (func: (arg?: any) => Promise<any>) => {
+const memoizedFactoryFunction = <T, K>(func: (arg: K) => Promise<T>) => {
   // Create simple cache to hold the results of func()
-  const cache: { [key: string]: any } = {}
+  const cache: { [key: string]: Promise<T> } = {}
 
   console.log('Factory Function ran')
 
   // Access the arguments of func()
-  return (args) => {
+  return (args: K): Promise<T> => {
     // Create simple key using the arguments of func()
-    const cacheKey = [...args].join()
+    // const cacheKey = [...args].join()
+    
+    // Using stringify instead of the above because
+    // Typescript doesn't know how to spread and
+    // join K since K is a generic.
+    const cacheKey = JSON.stringify(args);
     
     // If the arguments of func() aren't found in the cache,
     // run func() and add it to the cache.
@@ -63,7 +68,7 @@ const memoizedFactoryFunction = (func: (arg?: any) => Promise<any>) => {
   }
 }
 
-const myMemoizedFunction = memoizedFactoryFunction(simpleFetchFunction)
+const myMemoizedFunction = memoizedFactoryFunction<string, string>(simpleFetchFunction)
 
 // simpleFetchFunction should run.
 myMemoizedFunction(simpleStringFunction('http://www.test.com?a=2'))
@@ -77,5 +82,3 @@ myMemoizedFunction(simpleStringFunction('http://www.test.com?a=3&b=2&c=1'))
 // simpleFetchFunction should not run since the param order has changed
 // but the params themselves have not changed.
 myMemoizedFunction(simpleStringFunction('http://www.test.com?b=2&a=3&c=1'))
-
-  
